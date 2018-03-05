@@ -1,0 +1,11 @@
+Package: deblank
+Type: Package
+Title: remove baseline based on the blank sample.
+Version: 0.1.0
+Author: Ji Hongchao
+Maintainer: Ji Hongchao <ji.hongchao@foxmail.com>
+Description: remove baseline based on the blank sample.
+License: MIT
+Depends: KPIC
+Encoding: UTF-8
+LazyData: true
