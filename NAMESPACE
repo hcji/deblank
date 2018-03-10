@@ -1,4 +1,8 @@
 exportPattern(
   "LoadData",
   "deblank",
+  "getTIC",
+  "getMS",
+  "plotTIC",
+  "plotMS"
   "runApp")
