@@ -1,1 +1,4 @@
-exportPattern("runApp")
+exportPattern(
+  "LoadData",
+  "deblank",
+  "runApp")
