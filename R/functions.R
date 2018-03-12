@@ -60,7 +60,7 @@ getMS <- function(raw, rt){
   return(raw$peaks[[this]])
 }
 
-plotTIC <- function(tic_file, tic_blank, tic_deblank) {
+plotTIC <- function(tic_raw, tic_blank, tic_deblank) {
   p <- plot_ly() %>%
     layout(xaxis = list(tick0 = 0, title = 'Retention Time (s)'),
            yaxis = list(title = 'Intensity'))
@@ -74,12 +74,10 @@ plotTIC <- function(tic_file, tic_blank, tic_deblank) {
 
 plotMS <- function(ms){
   p <- plot_ly() %>%
-    layout(xaxis = list(tick0 = 0, title = 'mass-to-charge'),
+    layout(xaxis = list(range=c(0, max(ms[,'mz'])+20), tick0 = 0, title = 'mass-to-charge'),
            yaxis = list(tick0 = 0, title = 'Intensity'),
            showlegend = FALSE)
 
-  p <- add_markers(p, x=0, y=0, color=I('black'))
-  p <- add_markers(p, x=max(ms[,'mz'] + 20), y=0, color=I('black'))
   for (i in 1:nrow(ms)){
     p <- add_lines(p, x=rep(ms[i,'mz'],2), y=c(0,ms[i,'intensity']), color=I('blue'))
   }

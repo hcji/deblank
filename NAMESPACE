@@ -5,4 +5,4 @@ exportPattern(
   "getMS",
   "plotTIC",
   "plotMS",
-  "runApp")
+  "runDeBlank")
