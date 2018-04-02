@@ -42,6 +42,7 @@ deblank <- function(raw_blank, raw_file, window=5, threshold=100, digit=2) {
     blank.win <- which(raw_blank$times>left.rt & raw_blank$times<right.rt)
     blank.ion <- do.call(rbind, pb[blank.win])
     blank.ion <- blank.ion[blank.ion[,2]>threshold,]
+    if (is.null(blank.ion)){next}
 
     keep <- ! round(this.peak$mz, digit) %in% round(blank.ion$mz, digit)
     this.peak[keep,]
